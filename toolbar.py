@@ -1,4 +1,5 @@
-from PyQt6.QtCore import Qt
+import os
+
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QHBoxLayout, QComboBox, QPushButton, QLabel
 from engine import SapperGame
@@ -31,7 +32,7 @@ class ToolBar(QHBoxLayout):
         font = self.restartButton.font()
         font.setPointSize(16)
         self.restartButton.setFont(font)
-        self.restartButton.setIcon(QIcon('Resources/restart.png'))
+        self.restartButton.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'Resources/restart.png')))
         self.restartButton.setFixedSize(90, 42)
         self.addWidget(self.restartButton)
 

@@ -1,6 +1,8 @@
+import os
+
 from PyQt6.QtCore import Qt, pyqtSignal, QEvent
 from PyQt6.QtGui import QPixmap
-from PyQt6.QtWidgets import QLabel, QSizePolicy, QGridLayout
+from PyQt6.QtWidgets import QLabel, QGridLayout
 
 
 class ClickedLabel(QLabel):
@@ -94,4 +96,4 @@ class SapperField(QGridLayout):
     
     def drawBomb(self, heightIndex, widthIndex):
         self.cellList[heightIndex][widthIndex].setScaledContents(True)
-        self.cellList[heightIndex][widthIndex].setPixmap(QPixmap('Resources/bomb.png'))  
+        self.cellList[heightIndex][widthIndex].setPixmap(QPixmap(os.path.join(os.path.dirname(__file__), 'Resources/bomb.png')))  
